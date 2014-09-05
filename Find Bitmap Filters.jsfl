@@ -12,10 +12,12 @@ for each(var item in doc.library.items)
 		doc.library.selectItem(item.name);
 		doc.library.editItem();
 		
-		var layer;
+		var layer, locked;
 		for (var l = 0; l < item.timeline.layerCount; l++)
 		{
 			layer = item.timeline.layers[l];
+			locked = layer.locked;
+			layer.locked = false;
 			
 			var ld = {list:[], parent:data};
 			ld.msg = "L" + (l + 1) + ":" + layer.name ;
@@ -65,6 +67,7 @@ for each(var item in doc.library.items)
 			}			
 			
 			if (ld.list.length > 0) data.list.push(ld);
+			layer.locked = locked;
 		}
 		
 		if (data.list.length > 0) 
