@@ -1,11 +1,12 @@
 ﻿flash.outputPanel.clear();
+fl.showIdleMessage(false);
 
 var data;
 var doc = flash.getDocumentDOM();
 for each(var item in doc.library.items)
-{	
-	if (item.timeline)
-	{
+{
+	if ("timeline" in item)
+	{		
 		data = {msg:item.name, list:[]};
 		
 		doc.library.selectItem(item.name);
