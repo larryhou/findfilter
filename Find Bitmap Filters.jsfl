@@ -20,14 +20,17 @@ for each(var item in doc.library.items)
 			var ld = {list:[], parent:data};
 			ld.msg = "L" + (l + 1) + ":" + layer.name ;
 			
-			var frame, num = 0;
+			var frame;
 			for (var f = 0; f < layer.frames.length; f++)
 			{
+				trace(f, layer.frames[f].startFrame, layer.frames[f].duration);
+				if (f != layer.frames[f].startFrame) continue;
+				
 				frame = layer.frames[f];
-				item.timeline.setSelectedFrames(num, frame.duration);		
+				item.timeline.setSelectedFrames(frame.startFrame, frame.startFrame + 1);		
 				
 				var fd = {list:[], parent:ld};
-				fd.msg = "F" + (num + 1);
+				fd.msg = "F" + (frame.startFrame + 1);
 				
 				var element;
 				for (var e = 0; e < frame.elements.length; e++)
@@ -57,9 +60,8 @@ for each(var item in doc.library.items)
 					}
 					
 					if (ed.list.length > 0) fd.list.push(ed);					
-				}				
+				}
 				
-				num += frame.duration;
 				if (fd.list.length > 0) ld.list.push(fd);
 			}			
 			
