@@ -26,7 +26,7 @@ for each(var item in doc.library.items)
 				if (f != layer.frames[f].startFrame) continue;
 				
 				frame = layer.frames[f];
-				item.timeline.setSelectedFrames(frame.startFrame, frame.startFrame + 1);		
+				item.timeline.setSelectedFrames(frame.startFrame, frame.startFrame);		
 				
 				var fd = {list:[], parent:ld};
 				fd.msg = "F" + (frame.startFrame + 1);
