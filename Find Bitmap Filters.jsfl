@@ -55,7 +55,7 @@ for each(var item in doc.library.items)
 						for (var i = 0; i < list.length; i++)
 						{
 							var dd = {parent:ed}
-							dd.msg = filterText(list[0]);
+							dd.msg = filterText(list[i]);
 							ed.list.push(dd);
 						}
 					}
