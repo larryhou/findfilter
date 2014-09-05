@@ -57,7 +57,7 @@ for each(var item in doc.library.items)
 					}
 					
 					if (ed.list.length > 0) fd.list.push(ed);					
-				}
+				}				
 				
 				num += frame.duration;
 				if (fd.list.length > 0) ld.list.push(fd);
