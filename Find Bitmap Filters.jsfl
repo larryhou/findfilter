@@ -21,7 +21,7 @@ for each(var item in doc.library.items)
 			ld.msg = "L" + (l + 1) + ":" + layer.name ;
 			
 			var frame, num = 0;
-			for (var f = 0; f < layer.frameCount; f++)
+			for (var f = 0; f < layer.frames.length; f++)
 			{
 				frame = layer.frames[f];
 				item.timeline.setSelectedFrames(num, frame.duration);		
@@ -59,10 +59,10 @@ for each(var item in doc.library.items)
 					if (ed.list.length > 0) fd.list.push(ed);					
 				}
 				
+				num += frame.duration;
 				if (fd.list.length > 0) ld.list.push(fd);
-			}
+			}			
 			
-			num += frame.duration;
 			if (ld.list.length > 0) data.list.push(ld);
 		}
 		
