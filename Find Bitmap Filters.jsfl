@@ -23,7 +23,6 @@ for each(var item in doc.library.items)
 			var frame;
 			for (var f = 0; f < layer.frames.length; f++)
 			{
-				trace(f, layer.frames[f].startFrame, layer.frames[f].duration);
 				if (f != layer.frames[f].startFrame) continue;
 				
 				frame = layer.frames[f];
