@@ -60,10 +60,9 @@ for each(var item in doc.library.items)
 				}
 				
 				if (fd.list.length > 0) ld.list.push(fd);
-				
-				num += frame.duration;
 			}
 			
+			num += frame.duration;
 			if (ld.list.length > 0) data.list.push(ld);
 		}
 		
